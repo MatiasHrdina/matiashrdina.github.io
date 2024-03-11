@@ -22,12 +22,14 @@
         }
     </style>
     <script>
-      function showText() {
-          var inputt = document.getElementById("fname").value;
+      function updateContent() {
+            // Get the value from the input field
+            var inputValue = document.getElementById("myInput").value;
 
-          var outputt = document.getElementById("output");
-          outputt.innerHTML = "Your input was: " + inputt;
-      }
+            // Update the content of the designated section
+            var contentSection = document.getElementById("content");
+            contentSection.innerHTML = "You entered: " + inputValue;
+        }
   </script>
 </head>
  
@@ -95,10 +97,10 @@
           </tr>
       </table>
       </form>
-      <h2>Enter text in the box below </h2>
-        <label for="fname">TEXT:</label><br>
-        <input type="text" id="fname" name="fname"><br>
-        <button onclick="showText()">Submit</button>
-        <div id="output"></div>
+      <h2>Enter Text:</h2>
+    <input type="text" id="myInput">
+    <button onclick="updateContent()">Update Content</button>
+
+    <div id="content">This section will change based on your input.</div>
 </body>
 </html>
